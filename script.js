@@ -1,5 +1,13 @@
 let movable=false
 const boule=document.getElementById("boule")
+let keysPressed = {};
+window.addEventListener("keydown" , (event) => {
+    keysPressed[event.key] = true;
+});
+window.addEventListener("keyup", (event) => {
+    keysPressed[event.key] = false;
+});
+
 window.addEventListener("mousemove",(event)=>{
     if (movable){
     console.log(event.clientX,event.clientY)
@@ -12,11 +20,22 @@ document.getElementById("boule").addEventListener("click",()=>{
 movable=!movable
 })
 
-window.addEventListener("keydown",(event)=>{
-    switch(event.key){
-        case "ArrowLeft": boule.style.left=(boule.offsetLeft-5)+"px";break;
-        case "ArrowRight": boule.style.left=(boule.offsetLeft+5)+"px";break;
-        case "ArrowUp": boule.style.top=(boule.offsetTop-5)+"px";break;
-        case "ArrowDown": boule.style.top=(boule.offsetTop+5)+"px";break;
+function moveBoule() {
+    if (keysPressed["ArrowLeft"]) {
+        boule.style.left = (boule.offsetLeft - 5) + "px";
     }
-})
+    if (keysPressed["ArrowRight"]) {
+        boule.style.left = (boule.offsetLeft + 5) + "px";
+    }
+    if (keysPressed["ArrowUp"]) {
+        boule.style.top = (boule.offsetTop - 5) + "px";
+    }
+    if (keysPressed["ArrowDown"]) {
+        boule.style.top = (boule.offsetTop + 5) + "px";
+    }
+
+    requestAnimationFrame(moveBoule);
+}
+
+moveBoule();
+
