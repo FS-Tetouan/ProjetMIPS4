@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Création d'Examen</title>
+    <link rel="stylesheet" href="ENSEIGNANT.css">
+    <script src="enseignat.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Créer un nouvel examen</h2>
+        <div class="input-div">
+            <span>Titre de l'examen :</span>
+            <input type="text" name="title" required>
+        </div>
+        
+        <div class="input-des">
+            <span>Description :</span>
+            <input "text" name="Description" >
+        </div>
+        <div class="input-cib">
+            <span>Public Cible :</span>
+            <input type="text" id="public" name="public" placeholder="Ex: 2e année MIP, S4, groupe A" required>
+        </div>
+        <div class="input-lien">
+            <span>lien d'acces :</span>
+            <input type="text" id="examLink" readonly/>
+            <input type="button" class="btn" value="generer un lien">
+        </div>
+        <button type="submit">Créer l'examen</button>
+
+
+    </div>
+
+    
+</body>
+</html>
