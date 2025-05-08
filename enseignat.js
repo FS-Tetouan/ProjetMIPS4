@@ -15,3 +15,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ajoute l'événement de clic sur le bouton
     generateBtn.addEventListener("click", generateExamLink);
 });
+app.post("/register", (req, res) => {
+    let nom = req.body.nom;
+    let email = req.body.email;
+    console.log("Nom:", nom);
+    console.log("Email:", email);
+});

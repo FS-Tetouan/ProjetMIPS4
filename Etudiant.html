@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Espace Étudiant</title>
+    <link rel="stylesheet" href="Etudiant.css">
+</head>
+<body>
+    <script src="Etudiant.js"></script>
+
+    <div id="inscription" class="page active">
+        <h2>Inscription</h2>
+        <input type="text" placeholder="Nom">
+        <input type="text" placeholder="Prenom">
+        <input type="email" placeholder="email" name="Email" required>
+        <h4>creer un mot de passe :</h5>
+        <input type="password" placeholder="mot de passe*" required>
+        <button onclick="changerPage('connexion')">Suivant</button>
+    </div>
+    
+    <div id="connexion" class="page">
+        <h2>Connexion</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="mot de passe*" required>
+        <button onclick="changerPage('geolocalisation')">Suivant</button>
+    </div>
+    
+    <div id="geolocalisation" class="page">
+        <h2>Il est necessaire d'activer la géolocalisation</h2>
+        <button onclick="demarrerGeolocalisation()">Activer</button>
+    </div>
+    
+    <div id="questions" class="page">
+        <h2>vous allez commencer l'examen !</h2>
+        <p id="question-text"></p>
+        <button onclick="suivantQuestion()">Suivant</button>
+    </div>
+    
+    <div id="score" class="page">
+        <h2>Score</h2>
+        <p id="score-text">Votre score est en calcul...</p>
+    </div>
+    
+</body>
+</html>
