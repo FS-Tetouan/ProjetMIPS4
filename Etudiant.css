@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    text-align: center;
+    overflow:hidden;
+    background: linear-gradient(135deg, #c4b2cb, #ffffff);
+}
+h2{
+    text-align: left;
+    color: rgba(255, 255, 255, 0.737);
+}
+h4{
+    text-align: left;
+    color: rgba(255, 255, 255, 0.546);
+}
+.page {
+    display: none;
+    padding: 40px;
+    background: rgba(91, 79, 122, 0.731);
+    max-width: 500px;
+    margin: 50px auto;
+    border-radius: 8px;
+    margin-top: 70px;
+    width: fit-content;
+    box-shadow: 15px 15px 15px rgba(0, 0, 0, 0.274);
+}
+
+.active {
+    display: block;
+}
+
+button {
+    background: #9b88ac;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background: #dcb4d7;
+}
+
+input, select {
+    width: 500px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction:column;
+    margin-right:15px;
+    margin-bottom: 17px;
+}
+
+
+#question-container {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.page.active {
+    animation: fadeIn 0.5s ease-in-out;
+}
+#connexion {
+    margin-top: 155px;
+    padding-right: 80px;
+}
+#geolocalisation {
+    margin-top: 180px;
+    padding-right: 80px;
+}
+#score {
+    margin-top: 150px;
+    padding-right: 80px;
+}
+
+#questions{
+    margin-top: 180px;
+
+}

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <div class="project-name">EXAM-HA</div>
@@ -25,7 +26,7 @@
         </div>   
          
         <div class="login-container">
-            <form action="index.html">
+            <form id="signupForm" action="index.html">
                 <img src="img/undraw_pic-profile_nr49.svg">
                 
                 <div class="input-div">
@@ -33,7 +34,7 @@
                         <i class="fas fa-user"></i>
                     </div>
                     <div>
-                        <input type="email" placeholder="adresse e-mail*" name="Email" required>
+                        <input type="email" id="email" name="Email" placeholder="adresse e-mail*" required>
                     </div>
                 </div>
                 <div class="input-div">
@@ -41,13 +42,13 @@
                         <i class="fas fa-lock"></i>
                     </div>
                     <div>
-                        <input class="input" type="password" placeholder="mot de passe*">
+                        <input class="input" type="password" id="password" placeholder="mot de passe*">
                     </div>
                 </div>
                 
                 <div class="link-row">
                     <a href="forgot-password.html" class="forgot-link">Mot de passe oublié ?</a>
-                    <a href="sign-in.html" class="sign-in-link">Créer un compte</a>
+                    <a href="inscription.html" class="sign-in-link">Créer un compte</a>
                 </div>
                 
                 <input type="submit" class="btn" value="se connecter">
@@ -55,6 +56,6 @@
             </form>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
