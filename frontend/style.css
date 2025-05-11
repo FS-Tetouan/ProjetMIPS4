@@ -61,7 +61,7 @@ body {
     z-index: 1; 
 }
 
-/* Image Section */
+
 .img img {
     max-width: 280px; 
     height: auto; 
@@ -118,7 +118,7 @@ body {
     background: transparent;
 }
 
-/* Forgot Password Link */
+
 a {
     text-decoration: none;
     font-size: 14px;
@@ -148,7 +148,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Login Button */
+
 .btn {
     display: block;
     width: 100%;
@@ -171,9 +171,9 @@ a:hover {
 @media (max-width: 768px) {
     .container {
         display: flex;
-        flex-direction: column; /* Passe en colonne sur petit écran */
+        flex-direction: column; 
         align-items: center;
-        gap: 1rem; /* Réduit l’espace entre les éléments */
+        gap: 1rem; 
     }
 
     .img img {
