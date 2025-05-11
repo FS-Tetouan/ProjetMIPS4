@@ -23,3 +23,17 @@ function suivantQuestion() {
         changerPage('score');
     }
 }
+
+document.addEventListener("DOMContentLoaded", async function () {
+    const publicCible = "2e année MIP, S4"; // Adapter selon le profil étudiant
+
+    const response = await fetch(`/examens/${encodeURIComponent(publicCible)}`);
+    const examens = await response.json();
+
+    let list = document.getElementById("exam-list");
+    examens.forEach(exam => {
+        let item = document.createElement("li");
+        item.innerHTML = `<a href="/exam/${exam.lien_acces}">${exam.titre}</a>`;
+        list.appendChild(item);
+    });
+});

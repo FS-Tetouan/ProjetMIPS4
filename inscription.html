@@ -36,7 +36,7 @@
     <div class="step">
       <label>Gender :</label>
       <select name="gender" required>
-        <option value="">Select</option>
+        <option value="" disabled selected>Select</option>
         <option value="male">Male</option>
         <option value="female">Female</option>
       </select>
@@ -69,64 +69,7 @@
 
   </form>
 </div>
-
-<script>
-  const steps = document.querySelectorAll('.step');
-  const nextButtons = document.querySelectorAll('.next');
-  let currentStep = 0;
-
-  nextButtons.forEach((btn, index) => {
-    btn.addEventListener('click', () => {
-      steps[currentStep].classList.remove('active-step');
-      currentStep++;
-      steps[currentStep].classList.add('active-step');
-    });
-  });
-
-  const signupForm = document.getElementById('signupForm');
-
-  if (signupForm) {
-    signupForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      const userData = {
-        firstname: signupForm.firstname.value,
-        lastname: signupForm.lastname.value,
-        email: signupForm.email.value,
-        dob: signupForm.dob.value,
-        gender: signupForm.gender.value,
-        institution: signupForm.institution.value,
-        department: signupForm.department.value,
-        role: signupForm.role.value,
-        password: signupForm.password.value
-      };
-      console.log('Password before sending:', signupForm.password.value);
-
-      try {
-        const res = await fetch('http://localhost:5000/register', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(userData)
-        });
-
-        const data = await res.text();
-
-
-        if (res.ok) {
-          document.getElementById('message').innerText = "✅ " + data;
-
-        } else {
-          document.getElementById('message').innerText = "❌ " + data;
-        }
-      } catch (error) {
-        document.getElementById('message').innerText = "❌ Error while signing up.";
-        console.error(error);
-      }
-    });
-  }
-</script>
+<script src="inscription.js"></script>
 
 </body>
 </html>

@@ -11,7 +11,7 @@
     left: 5px; 
     font-size: 20px;
     font-weight: bold;
- 
+    color: #ffffff;
 }
 .des {
     position: fixed;
@@ -170,6 +170,14 @@ a:hover {
         flex-direction: column; /* Passe en colonne sur petit écran */
         align-items: center;
         gap: 1rem; /* Réduit l’espace entre les éléments */
+    }
+    .project-name{
+        position: fixed;
+        top: 11px; 
+        left: 1px; 
+        font-size: 17px;
+        font-weight: bold;
+        color: #ffffff;
     }
 
     .img img {
