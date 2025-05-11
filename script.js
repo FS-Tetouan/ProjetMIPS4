@@ -1,22 +1,13 @@
-let movable=false
-const boule=document.getElementById("boule")
-window.addEventListener("mousemove",(event)=>{
-    if (movable){
-    console.log(event.clientX,event.clientY)
-    boule.style.left=(event.clientX-boule.clientWidth/2)+"px"
-    boule.style.top=(event.clientY-boule.clientHeight/2)+"px"
-    }
-})
+document.querySelector("form").addEventListener("submit", function(event) {
+    let email = document.querySelector("input[name='Email']").value;
+    let password = document.querySelector("input[type='password']").value;
 
-document.getElementById("boule").addEventListener("click",()=>{
-movable=!movable
-})
-
-window.addEventListener("keydown",(event)=>{
-    switch(event.key){
-        case "ArrowLeft": boule.style.left=(boule.offsetLeft-5)+"px";break;
-        case "ArrowRight": boule.style.left=(boule.offsetLeft+5)+"px";break;
-        case "ArrowUp": boule.style.top=(boule.offsetTop-5)+"px";break;
-        case "ArrowDown": boule.style.top=(boule.offsetTop+5)+"px";break;
+    if (!email.includes("@")) {
+        alert("Adresse e-mail invalide !");
+        event.preventDefault();
     }
-})
+    if (password.length < 6) {
+        alert("Le mot de passe doit contenir au moins 6 caractères !");
+        event.preventDefault();
+    }
+});

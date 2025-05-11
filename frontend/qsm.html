@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Création de Questions</title>
+    <link rel="stylesheet" href="qsm.css" />
+</head>
+<body>
+    <div class="container">
+        <h2>Créer une Question</h2>
+
+        <div class="form-group">
+            <label>Type de question :</label>
+            <select id="questionType">
+                <option value="direct">Question Directe</option>
+                <option value="qcm">QCM</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>Énoncé :</label>
+            <textarea id="questionText" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Joindre un fichier (image, audio, vidéo) :</label>
+            <input type="file" id="mediaFile" />
+        </div>
+
+        <div id="directSection" class="question-section">
+            <label>Réponse correcte :</label>
+            <input type="text" id="directAnswer" />
+
+            <label>Tolérance (en %) :</label>
+            <input type="number" id="tolerance" min="0" max="100" value="0" />
+        </div>
+
+        <div id="qcmSection" class="question-section" style="display: none;">
+            <label>Options :</label>
+            <div id="optionsList"></div>
+            <button type="button" onclick="addOption()">+ Ajouter option</button>
+        </div>
+
+        <div class="form-group">
+            <label>Note :</label>
+            <input type="number" id="points" min="1" />
+        </div>
+
+        <div class="form-group">
+            <label>Durée (en secondes) :</label>
+            <input type="number" id="duration" min="10" />
+        </div>
+
+        <button onclick="addQuestion()">Ajouter la question</button>
+        <button onclick="finishCreation()" style="margin-left: 10px; background-color: #9cf;">📤 Terminer et enregistrer</button>
+        <button onclick="finishExam()">📄 Terminer et prévisualiser</button>
+
+
+
+        <div id="questionsPreview">
+            <h3>Questions ajoutées :</h3>
+            <ul id="questionsList"></ul>
+        </div>
+    </div>
+
+    <script src="qsm.js"></script>
+</body>
+</html>
